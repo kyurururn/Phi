@@ -16,7 +16,7 @@ const permission_request = () => {
     }
 }
 
-const gyro = (event) => {
+const move = (event) => {
     let beta = Math.floor(event.beta);
     document.getElementById("a").innerHTML = String(beta);
 }
