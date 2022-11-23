@@ -29,7 +29,7 @@ const move = (event) => {
 
 
 const gyro = (event) => {
-    let rotate_z = event.rotationRate.alpha;
+    let rotate_z = event.rotationRate.gamma;
     let interval = event.interval;
 
     document.getElementById("shape").innerHTML = String(interval);
