@@ -30,6 +30,10 @@ const move = (event) => {
     let gamma = Math.floor(event.gamma);
     let alpha = Math.floor(event.alpha);
 
+    if(Math.abs(beta) > 90){
+        gamma = -1 * gamma
+    }
+
     x_speed += gravity * Math.sin(gamma * Math.PI / 180) * 0.01;
 
     if(x_speed > 0){
