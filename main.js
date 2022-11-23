@@ -1,5 +1,5 @@
 let mass = 10;
-let gravity = 10000000;
+let gravity = 100000;
 let y_speed = 0;
 let x_speed = 0;
 
@@ -30,10 +30,8 @@ const move = (event) => {
     let gamma = Math.floor(event.gamma);
     let alpha = Math.floor(event.alpha);
 
-    document.getElementById("shape").innerHTML = String(event.interval) + "<br>" + String(gamma);
-
-    x_speed += gravity * Math.sin(gamma * Math.PI / 180) * event.interval;
-    shape_x += x_speed * event.interval;
+    x_speed += gravity * Math.sin(gamma * Math.PI / 180) * 0.01;
+    shape_x += x_speed * 0.01;
     
     document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px,0px) rotateZ(" + String(alpha) + "deg)";
 
