@@ -33,7 +33,7 @@ const gyro = (event) => {
     let rotate_z = event.rotationRate.gamma;
     let interval = event.interval;
 
-    shape_rotate_z = rotate_z * interval
+    shape_rotate_z += rotate_z * interval
 
     document.getElementById("shape").style.transform = "rotateZ(" + String(shape_rotate_z) + "deg)";
 }
