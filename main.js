@@ -37,10 +37,7 @@ const move = (event) => {
         gamma = -1 * gamma
     }
 
-    x_speed += gravity * Math.sin(gamma * Math.PI / 180) * 0.01;
-
-    document.getElementById("shape").innerHTML = "P<br>" + String(acce_x) + "<br>" + String(acce_y);
-
+    x_speed += (gravity * Math.sin(gamma * Math.PI / 180) + acce_x) * 0.01;
 
     if(x_speed > 0){
         x_speed -= 0.5;
@@ -75,7 +72,7 @@ const move = (event) => {
 
 
 
-    y_speed += gravity * Math.sin(beta * Math.PI / 180) * 0.01;
+    y_speed += (gravity * Math.sin(beta * Math.PI / 180) + acce_y) * 0.01;
 
     if(y_speed > 0){
         y_speed -= 0.5;
