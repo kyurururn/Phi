@@ -1,5 +1,11 @@
-let shape_rotate_z = 0;
-let shape_rotate_z_est = 0;
+let mass = 10;
+let gravity = 5;
+let y_speed = 0;
+let x_speed = 0;
+
+let shape_x = 0;
+let shape_y = 0;
+let shape_rotaet = 0;
 
 const permission_request = () => {
     if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
@@ -20,20 +26,27 @@ const permission_request = () => {
 }
 
 const move = (event) => {
-    /*
     let beta  = Math.floor(event.beta);
     let gamma = Math.floor(event.gamma);
     let alpha = Math.floor(event.alpha);
-    document.getElementById("shape").style.transform = "rotateX(" + beta + "deg) rotateY(" + gamma + "deg) rotateZ(" + alpha + "deg)";
-    */
+
+    x_speed += gravity * Math.sin(gamma * Math.PI / 180) * event.interval;
+    shape_x += x_speed * event.interval;
+    
+    document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px,0px) rotateZ(" + String(alpha) + "deg)";
+
+
+
 }
 
 
 const gyro = (event) => {
+    /*
     let rotate_z = event.rotationRate.gamma;
     let interval = event.interval;
 
     shape_rotate_z += rotate_z * interval
 
     document.getElementById("shape").style.transform = "rotateZ(" + String(shape_rotate_z) + "deg)";
+    */
 }
