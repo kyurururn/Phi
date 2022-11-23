@@ -45,14 +45,15 @@ const move = (event) => {
         }
     }
 
-    if(document.getElementById("shape").getBoundingClientRect().right < 0){
+    shape_x += x_speed * 0.01;
+
+    if(window.innerWidth - document.getElementById("shape").getBoundingClientRect().right < 0){
         x_speed = x_speed * -0.8
     }
-    if(document.getElementById("shape").getBoundingClientRect().left < 0){
+    if(shape_x < 0){
         x_speed = x_speed * -0.8
     }
 
-    shape_x += x_speed * 0.01;
 
 
 
@@ -70,17 +71,17 @@ const move = (event) => {
             y_speed = 0;
         }
     }
-
-    if(document.getElementById("shape").getBoundingClientRect().top < 0){
-        y_speed = y_speed * -0.8
-    }
-    if(document.getElementById("shape").getBoundingClientRect().bottom < 0){
-        y_speed = y_speed * -0.8
-    }
     
     shape_y += y_speed * 0.01;
+
+    if(shape_y < 0){
+        y_speed = y_speed * -0.8
+    }
+    if(window.innerHeight - document.getElementById("shape").getBoundingClientRect().bottom < 0){
+        y_speed = y_speed * -0.8
+    }
     
-    document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px) rotateZ(" + String(alpha) + "deg)";
+    document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px)";
 
 
 
