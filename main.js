@@ -1,5 +1,5 @@
 let mass = 10;
-let gravity = 7500;
+let gravity = 5000;
 let y_speed = 0;
 let x_speed = 0;
 
@@ -31,9 +31,38 @@ const move = (event) => {
     let alpha = Math.floor(event.alpha);
 
     x_speed += gravity * Math.sin(gamma * Math.PI / 180) * 0.01;
+
+    if(x_speed > 0){
+        x_speed -= 0.1;
+        if(x_speed < 0){
+            x_speed = 0;
+        }
+    }
+    if(x_speed < 0){
+        x_speed += 0.1;
+        if(x_speed > 0){
+            x_speed = 0;
+        }
+    }
     shape_x += x_speed * 0.01;
 
+
+
     y_speed += gravity * Math.sin(beta * Math.PI / 180) * 0.01;
+
+    if(y_speed > 0){
+        y_speed -= 0.1;
+        if(y_speed < 0){
+            y_speed = 0;
+        }
+    }
+    if(y_speed < 0){
+        y_speed += 0.1;
+        if(y_speed > 0){
+            y_speed = 0;
+        }
+    }
+    
     shape_y += y_speed * 0.01;
     
     document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px) rotateZ(" + String(alpha) + "deg)";
