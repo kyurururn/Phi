@@ -48,9 +48,9 @@ const move = (event) => {
     shape_x += x_speed * 0.01;
 
     if(window.innerWidth - document.getElementById("shape").getBoundingClientRect().right < 0){
-        x_speed = x_speed * -0.8
+        x_speed = x_speed * -0.8;
     }
-    if(shape_x < 0){
+    if(document.getElementById("shape").getBoundingClientRect().left < 0){
         x_speed = x_speed * -0.8
     }
 
@@ -74,7 +74,7 @@ const move = (event) => {
     
     shape_y += y_speed * 0.01;
 
-    if(shape_y < 0){
+    if(document.getElementById("shape").getBoundingClientRect().top < 0){
         y_speed = y_speed * -0.8
     }
     if(window.innerHeight - document.getElementById("shape").getBoundingClientRect().bottom < 0){
