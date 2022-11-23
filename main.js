@@ -7,6 +7,9 @@ let shape_x = 0;
 let shape_y = 0;
 let shape_rotate = 0;
 
+let acce_x = 0;
+let acce_y = 0;
+
 const permission_request = () => {
     if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
         DeviceMotionEvent.requestPermission().then((result) => {
@@ -35,6 +38,9 @@ const move = (event) => {
     }
 
     x_speed += gravity * Math.sin(gamma * Math.PI / 180) * 0.01;
+
+    document.getElementById("shape").innerHTML = "P<br>" + String(acce_x) + "<br>" + String(acce_y);
+
 
     if(x_speed > 0){
         x_speed -= 0.5;
@@ -111,6 +117,4 @@ const move = (event) => {
 const gyro = (event) => {
     acce_x = event.acceleration.x;
     acce_y = event.acceleration.y;
-
-    document.getElementById("shape").innerHTML = String(acce_x) + "<br>" + String(acce_y);
 }
