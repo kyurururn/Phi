@@ -17,6 +17,8 @@ const permission_request = () => {
 }
 
 const move = (event) => {
-    let beta = Math.floor(event.beta);
-    document.getElementById("a").innerHTML = String(beta);
+    let beta  = Math.floor(event.beta);
+    let gamma = Math.floor(event.gamma);
+    let alpha = Math.floor(event.alpha);
+    document.getElementById("shape").style.transform = "rotateX(" + beta + "deg) rotateY(" + gamma + "deg) rotateZ(" + alpha + "deg)";
 }
