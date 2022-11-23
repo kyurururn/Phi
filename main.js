@@ -32,8 +32,11 @@ const move = (event) => {
 
     x_speed += gravity * Math.sin(gamma * Math.PI / 180) * 0.01;
     shape_x += x_speed * 0.01;
+
+    y_speed += gravity * Math.sin(beta * Math.PI / 180) * 0.01;
+    shape_y += y_speed * 0.01;
     
-    document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px,0px) rotateZ(" + String(alpha) + "deg)";
+    document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px) rotateZ(" + String(alpha) + "deg)";
 
 
 
