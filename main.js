@@ -1,11 +1,11 @@
 let mass = 10;
-let gravity = 100000;
+let gravity = 1000;
 let y_speed = 0;
 let x_speed = 0;
 
 let shape_x = 0;
 let shape_y = 0;
-let shape_rotaet = 0;
+let shape_rotate = 0;
 
 const permission_request = () => {
     if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
