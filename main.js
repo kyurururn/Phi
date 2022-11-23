@@ -33,17 +33,25 @@ const move = (event) => {
     x_speed += gravity * Math.sin(gamma * Math.PI / 180) * 0.01;
 
     if(x_speed > 0){
-        x_speed -= 0.1;
+        x_speed -= 0.5;
         if(x_speed < 0){
             x_speed = 0;
         }
     }
     if(x_speed < 0){
-        x_speed += 0.1;
+        x_speed += 0.5;
         if(x_speed > 0){
             x_speed = 0;
         }
     }
+
+    if(document.getElementById("shape").getBoundingClientRect().right < 0){
+        x_speed = x_speed * -0.8
+    }
+    if(document.getElementById("shape").getBoundingClientRect().left < 0){
+        x_speed = x_speed * -0.8
+    }
+
     shape_x += x_speed * 0.01;
 
 
@@ -51,16 +59,23 @@ const move = (event) => {
     y_speed += gravity * Math.sin(beta * Math.PI / 180) * 0.01;
 
     if(y_speed > 0){
-        y_speed -= 0.1;
+        y_speed -= 0.5;
         if(y_speed < 0){
             y_speed = 0;
         }
     }
     if(y_speed < 0){
-        y_speed += 0.1;
+        y_speed += 0.5;
         if(y_speed > 0){
             y_speed = 0;
         }
+    }
+
+    if(document.getElementById("shape").getBoundingClientRect().top < 0){
+        y_speed = y_speed * -0.8
+    }
+    if(document.getElementById("shape").getBoundingClientRect().bottom < 0){
+        y_speed = y_speed * -0.8
     }
     
     shape_y += y_speed * 0.01;
