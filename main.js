@@ -54,10 +54,16 @@ const move = (event) => {
     if(window.innerWidth - document.getElementById("shape").getBoundingClientRect().right < 0){
         x_speed = x_speed * -0.8;
         shape_x = (window.innerWidth - 250) / 2 - 1
+        if(Math.abs(x_speed) <= 1){
+            x_speed = 0
+        }
     }
     if(document.getElementById("shape").getBoundingClientRect().left < 0){
         x_speed = x_speed * -0.8
         shape_x = -1 * (window.innerWidth - 250) / 2 + 1
+        if(Math.abs(x_speed) <= 1){
+            x_speed = 0
+        }
     }
 
 
@@ -83,10 +89,16 @@ const move = (event) => {
     if(document.getElementById("shape").getBoundingClientRect().top < 0){
         y_speed = y_speed * -0.8
         shape_y = -1 * (window.innerHeight - 250) / 2 + 1
+        if(Math.abs(y_speed) <= 1){
+            y_speed = 0
+        }
     }
     if(window.innerHeight - document.getElementById("shape").getBoundingClientRect().bottom < 0){
         y_speed = y_speed * -0.8
         shape_y = (window.innerHeight - 250) / 2 - 1
+        if(Math.abs(y_speed) <= 1){
+            y_speed = 0
+        }
     }
     
     document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px)";
@@ -97,12 +109,8 @@ const move = (event) => {
 
 
 const gyro = (event) => {
-    /*
-    let rotate_z = event.rotationRate.gamma;
-    let interval = event.interval;
+    acce_x = event.acceleration.x;
+    acce_y = event.acceleration.y;
 
-    shape_rotate_z += rotate_z * interval
-
-    document.getElementById("shape").style.transform = "rotateZ(" + String(shape_rotate_z) + "deg)";
-    */
+    document.getElementById("shape").innerHTML = String(acce_x) + "<br>" + String(acce_y);
 }
