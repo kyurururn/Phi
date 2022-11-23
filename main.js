@@ -1,5 +1,5 @@
 let mass = 10;
-let gravity = 1000;
+let gravity = 7500;
 let y_speed = 0;
 let x_speed = 0;
 
