@@ -49,9 +49,11 @@ const move = (event) => {
 
     if(window.innerWidth - document.getElementById("shape").getBoundingClientRect().right < 0){
         x_speed = x_speed * -0.8;
+        shape_x = (window.innerWidth - 250) / 2 - 1
     }
     if(document.getElementById("shape").getBoundingClientRect().left < 0){
         x_speed = x_speed * -0.8
+        shape_x = -1 * (window.innerWidth - 250) / 2 + 1
     }
 
 
@@ -76,9 +78,11 @@ const move = (event) => {
 
     if(document.getElementById("shape").getBoundingClientRect().top < 0){
         y_speed = y_speed * -0.8
+        shape_y = -1 * (window.innerHeight - 250) / 2 + 1
     }
     if(window.innerHeight - document.getElementById("shape").getBoundingClientRect().bottom < 0){
         y_speed = y_speed * -0.8
+        shape_y = (window.innerHeight - 250) / 2 - 1
     }
     
     document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px)";
