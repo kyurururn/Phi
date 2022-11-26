@@ -16,3 +16,17 @@
     background-color:skyblue;
     border-radius:125px;
 }
+
+.cover{
+    background-color:rgba(20,20,20,0.3);
+    height:100dvh;
+    width:100vw;
+    position:fixed;
+    z-index:100;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:3.5dvh;
+    color:white;
+    font-family: 'Kosugi', sans-serif;
+}
