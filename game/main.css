@@ -27,7 +27,7 @@
     z-index:100;
 }
 
-.show_point{
+.showpoint{
     height:10dvh;
     width:40vw;
     background-color:rgba(25,25,25,0.15);
@@ -42,7 +42,7 @@
     font-family: 'Kosugi', sans-serif;
 }
 
-.show_time{
+.showtime{
     height:10dvh;
     width:40vw;
     background-color:rgba(25,25,25,0.15);
