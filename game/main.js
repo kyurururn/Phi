@@ -27,6 +27,9 @@ const permission_request = () => {
                 document.getElementById("cover").style.display = "none";
                 document.getElementById("point").style.display = "inline";
                 game = true;
+                time = 300;
+                point_c = 0;
+                document.getElementById("showpoint").innerHTML = "Point:" + String(point_c)
                 timer = setInterval(countdown,100);
             }
         });
@@ -39,6 +42,9 @@ const permission_request = () => {
                 document.getElementById("cover").style.display = "none";
                 document.getElementById("point").style.display = "inline";
                 game = true;
+                time = 300;
+                point_c = 0;
+                document.getElementById("showpoint").innerHTML = "Point:" + String(point_c)
             }
         })
     }
@@ -155,7 +161,7 @@ const countdown = () => {
         clearInterval(timer);
         game = false;
         
-        document.getElementById("cover").innerHTML = "Point:" + String(point_c)
+        document.getElementById("cover").innerHTML = "<p>Point:" + String(point_c) + "</p><br><p>タップしてリスタート</p>" 
         document.getElementById("cover").style.display = "flex";
     }
 }

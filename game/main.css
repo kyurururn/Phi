@@ -17,6 +17,7 @@
     font-size:3dvh;
     font-family: 'Kosugi', sans-serif;
     z-index:500;
+    flex-direction:column;
 }
 
 .showtime{
@@ -33,6 +34,7 @@
     font-size:3dvh;
     font-family: 'Kosugi', sans-serif;
     z-index:500;
+    flex-direction:column;
 }
 
 .over{
@@ -74,4 +76,5 @@
     color:white;
     font-family: 'Kosugi', sans-serif;
     z-index:1000;
+    flex-direction:column;
 }
