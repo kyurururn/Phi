@@ -15,6 +15,7 @@ const permission_request = () => {
         DeviceMotionEvent.requestPermission().then((result) => {
             if(result === "granted"){
                 window.addEventListener("devicemotion",gyro,false);
+                document.getElementById("cover").style.display = "none";
             }
         });
     }
@@ -23,6 +24,7 @@ const permission_request = () => {
         DeviceOrientationEvent.requestPermission().then((result) => {
             if(result === "granted"){
                 window.addEventListener("deviceorientation",move,false);
+                document.getElementById("cover").style.display = "none";
             }
         })
     }
