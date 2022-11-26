@@ -117,6 +117,7 @@ const move = (event) => {
     if(Math.sqrt((point_x - shape_x) ** 2 + (point_y - shape_y) ** 2) <= 162.5){
         point = true;
         point_c += 10;
+        document.getElementById("show_point").innerHTML = "Point:" + String(point_c)
     }
     
     document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px)";

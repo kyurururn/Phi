@@ -25,3 +25,17 @@
     border-radius:37.5px;
     position:absolute;
 }
+
+.show_point{
+    height:10vh;
+    width:40vw;
+    background-color:rgba(25,25,25,0.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    border-radius:50px;
+    right:30px;
+    top:30px;
+    font-size:3vh;
+}
