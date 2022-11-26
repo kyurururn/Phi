@@ -156,6 +156,6 @@ const countdown = () => {
         game = false;
         
         document.getElementById("cover").innerHTML = "Point:" + String(point_c)
-        document.getElementById("cover").style.display = "inline";
+        document.getElementById("cover").style.display = "flex";
     }
 }
