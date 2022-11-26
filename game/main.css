@@ -15,27 +15,18 @@
     width:250px;
     background-color:skyblue;
     border-radius:125px;
-    position:absolute;
 }
 
-.point{
-    height:75px;
-    width:75px;
-    background-color:orange;
-    border-radius:37.5px;
-    position:absolute;
-}
-
-.show_point{
-    height:10dvh;
-    width:40vw;
-    background-color:rgba(25,25,25,0.15);
+.cover{
+    background-color:rgba(20,20,20,0.3);
+    height:100dvh;
+    width:100vw;
+    position:fixed;
+    z-index:100;
     display:flex;
     justify-content:center;
     align-items:center;
-    position:fixed;
-    border-radius:50px;
-    right:30px;
-    top:30px;
-    font-size:3dvh;
+    font-size:3.5dvh;
+    color:white;
+    font-family: 'Kosugi', sans-serif;
 }

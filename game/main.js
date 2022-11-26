@@ -5,11 +5,7 @@ let x_speed = 0;
 
 let shape_x = 0;
 let shape_y = 0;
-
-let point = true;
-let point_c = 0;
-let point_x = 0;
-let point_y = 0;
+let shape_rotate = 0;
 
 let acce_x = 0;
 let acce_y = 0;
@@ -19,6 +15,7 @@ const permission_request = () => {
         DeviceMotionEvent.requestPermission().then((result) => {
             if(result === "granted"){
                 window.addEventListener("devicemotion",gyro,false);
+                document.getElementById("cover").style.display = "none";
             }
         });
     }
@@ -27,6 +24,7 @@ const permission_request = () => {
         DeviceOrientationEvent.requestPermission().then((result) => {
             if(result === "granted"){
                 window.addEventListener("deviceorientation",move,false);
+                document.getElementById("cover").style.display = "none";
             }
         })
     }
@@ -73,6 +71,9 @@ const move = (event) => {
         }
     }
 
+
+
+
     y_speed += (gravity * Math.sin(beta * Math.PI / 180) - acce_y * 5000) * 0.01;
 
     if(y_speed > 0){
@@ -104,23 +105,9 @@ const move = (event) => {
             y_speed = 0
         }
     }
-
-    while(point){
-        point_x = Math.floor(Math.random() * (document.getElementById("over").clientWidth - 500)) - (document.getElementById("over").clientWidth - 500) / 2;
-        point_y = Math.floor(Math.random() * (document.getElementById("over").clientHeight - 500)) - (document.getElementById("over").clientHeight - 500) / 2;
-        document.getElementById("point").style.transform = "translate(" + String(point_x) + "px," + String(point_y) + "px)";
-        if(Math.sqrt((point_x - shape_x) ** 2 + (point_y - shape_y) ** 2) > 500){
-            point = false;
-        }
-    }
-
-    if(Math.sqrt((point_x - shape_x) ** 2 + (point_y - shape_y) ** 2) <= 162.5){
-        point = true;
-        point_c += 10;
-        document.getElementById("show_point").innerHTML = "Point:" + String(point_c)
-    }
     
     document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px)";
+
 
 
 }
