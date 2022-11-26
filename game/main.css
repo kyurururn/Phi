@@ -1,0 +1,27 @@
+*{
+    margin:0;
+}
+
+.over{
+    height:100vh;
+    width:100vw;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.shape{
+    height:250px;
+    width:250px;
+    background-color:skyblue;
+    border-radius:125px;
+    position:absolute;
+}
+
+.point{
+    height:75px;
+    width:75px;
+    background-color:orange;
+    border-radius:37.5px;
+    position:absolute;
+}
