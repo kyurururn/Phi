@@ -15,6 +15,7 @@
     width:250px;
     background-color:skyblue;
     border-radius:125px;
+    z-index:100;
 }
 
 .cover{
@@ -29,4 +30,5 @@
     font-size:3.5dvh;
     color:white;
     font-family: 'Kosugi', sans-serif;
+    z-index:1000;
 }
