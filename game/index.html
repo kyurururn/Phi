@@ -9,9 +9,18 @@
         <div class="cover" id="cover" onclick="permission_request();">
             クリックでスタート
         </div>
-        <div class="result" id="result" onclick="show_result()"></div>
-        <div class="showtime" id="showtime">Time<br>30.00</div>
-        <div class="showpoint" id="showpoint">Point<br>0</div>
+        <div class="result" id="result" onclick="show_result()">
+            <div class="result_se" id="result_se"></div>
+            <div class="result_ti" id="result_ti">タップしてリスタート</div>
+        </div>
+        <div class="showtime" id="showtime">
+            <div class="showtime_ti" id="showtime_ti">Time</div>
+            <div class="showtime_se" id="showtime_se">30.0</div>
+        </div>
+        <div class="showpoint" id="showpoint">
+            <div class="showpoint_ti" id="showpoint_ti">Point</div>
+            <div class="showpoint_se" id="showpoint_se">0</div>
+        </div>
         <div class="over" id="over">
             <div class="shape" id="shape"></div>
             <div class="point" id="point"></div>

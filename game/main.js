@@ -36,7 +36,7 @@ const show_result = () => {
     acce_x = 0;
     acce_y = 0;
 
-    document.getElementById("showpoint").innerHTML = "Point<br>" + String(point_c)
+    document.getElementById("showpoint_se").innerHTML = String(point_c)
     timer = setInterval(countdown,100);
 }
 
@@ -50,7 +50,7 @@ const permission_request = () => {
                 game = true;
                 time = 300;
                 point_c = 0;
-                document.getElementById("showpoint").innerHTML = "Point<br>" + String(point_c)
+                document.getElementById("showpoint_se").innerHTML = String(point_c)
                 timer = setInterval(countdown,100);
             }
         });
@@ -65,7 +65,7 @@ const permission_request = () => {
                 game = true;
                 time = 300;
                 point_c = 0;
-                document.getElementById("showpoint").innerHTML = "Point<br>" + String(point_c)
+                document.getElementById("showpoint_se").innerHTML = String(point_c)
             }
         })
     }
@@ -157,7 +157,7 @@ const move = (event) => {
         if(Math.sqrt((point_x - shape_x) ** 2 + (point_y - shape_y) ** 2) <= 162.5){
             point = true;
             point_c += 10;
-            document.getElementById("showpoint").innerHTML = "Point<br>" + String(point_c)
+            document.getElementById("showpoint_se").innerHTML = String(point_c)
         }
         
         document.getElementById("shape").style.transform = "translate(" + String(shape_x) + "px," + String(shape_y) + "px)";
@@ -177,12 +177,16 @@ let time = 300
 
 const countdown = () => {
     time--;
-    document.getElementById("showtime").innerHTML = "Time<br>" + String(time / 10);
+    if(time % 10 == 0){
+        document.getElementById("showtime_se").innerHTML = String(time / 10) + ".0";
+    }else{
+        document.getElementById("showtime_se").innerHTML = String(time / 10);
+    }
     if(time == 0){
         clearInterval(timer);
         game = false;
         
-        document.getElementById("result").innerHTML = "Point:" + String(point_c) + "<br>タップしてリスタート" 
+        document.getElementById("result_se").innerHTML = "Point:" + String(point_c);
         document.getElementById("result").style.display = "flex";
     }
 }

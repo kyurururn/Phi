@@ -95,3 +95,18 @@
     flex-direction:column;
     display:none;
 }
+
+.result_se{
+    height:7.5dvh;
+    font-size:6dvh;
+    width:80vw;
+    background-color:rgba(20,20,20,0.3);
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.result_ti{
+    margin:30px;
+}
