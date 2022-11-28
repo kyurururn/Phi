@@ -19,6 +19,29 @@ let game = false;
 
 document.getElementById("point").style.display = "none";
 
+const show_result = () => {
+    document.getElementById("cover").style.display = "none";
+    document.getElementById("point").style.display = "inline";
+    game = true;
+    time = 300;
+    point_c = 0;
+    y_speed = 0;
+    x_speed = 0;
+    shape_x = 0;
+    shape_y = 0;
+    point = true;
+    point_c = 0;
+    point_x = 0;
+    point_y = 0;
+
+    acce_x = 0;
+    acce_y = 0;
+    game = false;
+
+    document.getElementById("showpoint").innerHTML = "Point<br>" + String(point_c)
+    timer = setInterval(countdown,100);
+}
+
 const permission_request = () => {
     if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
         DeviceMotionEvent.requestPermission().then((result) => {
@@ -161,7 +184,7 @@ const countdown = () => {
         clearInterval(timer);
         game = false;
         
-        document.getElementById("cover").innerHTML = "Point:" + String(point_c) + "<br>タップしてリスタート" 
-        document.getElementById("cover").style.display = "flex";
+        document.getElementById("result").innerHTML = "Point:" + String(point_c) + "<br>タップしてリスタート" 
+        document.getElementById("result").style.display = "flex";
     }
 }
