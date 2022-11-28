@@ -24,7 +24,6 @@ const show_result = () => {
 
     game = true;
     time = 300;
-    point_c = 0;
     y_speed = 0;
     x_speed = 0;
     shape_x = 0;
@@ -36,7 +35,6 @@ const show_result = () => {
 
     acce_x = 0;
     acce_y = 0;
-    game = false;
 
     document.getElementById("showpoint").innerHTML = "Point<br>" + String(point_c)
     timer = setInterval(countdown,100);
