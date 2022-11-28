@@ -20,8 +20,8 @@ let game = false;
 document.getElementById("point").style.display = "none";
 
 const show_result = () => {
-    document.getElementById("cover").style.display = "none";
-    document.getElementById("point").style.display = "inline";
+    document.getElementById("result").style.display = "none";
+
     game = true;
     time = 300;
     point_c = 0;
