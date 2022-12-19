@@ -10,6 +10,21 @@ let shape_rotate = 0;
 let acce_x = 0;
 let acce_y = 0;
 
+
+const ua = navigator.userAgent;
+let head = document.getElementsByTagName("head")[0];
+let link = document.createElement("link");
+link.setAttribute("rel","stylesheet");
+link.setAttribute("type","text/css");
+if(/iPad|iPhone|iPod/.test(ua)){
+    link.setAttribute("href","main.css")
+}else{
+    link.setAttribute("href","main_android.css")
+}
+head.appendChild(link);
+
+
+
 const permission_request = () => {
     if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
         DeviceMotionEvent.requestPermission().then((result) => {
