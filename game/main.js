@@ -17,6 +17,20 @@ let acce_y = 0;
 let timer;
 let game = false;
 
+
+const ua = navigator.userAgent;
+let head = document.getElementsByTagName("head")[0];
+let link = document.createElement("link");
+link.setAttribute("rel","stylesheet");
+link.setAttribute("type","text/css");
+if(/iPad|iPhone|iPod/.test(ua)){
+    link.setAttribute("href","main.css")
+}else{
+    link.setAttribute("href","main_android.css")
+}
+head.appendChild(link);
+
+
 document.getElementById("point").style.display = "none";
 
 const show_result = () => {
