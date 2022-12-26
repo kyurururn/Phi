@@ -27,6 +27,8 @@ if(/iPad|iPhone|iPod/.test(ua)){
     link.setAttribute("href","main.css")
 }else{
     link.setAttribute("href","main_android.css")
+    let vh = window.innerHeight / 100
+    document.documentElement.style.setProperty("--vh", vh + "px");
 }
 head.appendChild(link);
 

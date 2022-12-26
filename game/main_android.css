@@ -39,6 +39,7 @@
 
 .over{
     height:100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width:100vw;
     display:flex;
     justify-content:center;
@@ -66,6 +67,7 @@
 .cover{
     background-color:rgba(20,20,20,0.3);
     height:100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width:100vw;
     position:fixed;
     z-index:100;
@@ -82,6 +84,7 @@
 .result{
     background-color:rgba(20,20,20,0.3);
     height:100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width:100vw;
     position:fixed;
     z-index:100;
