@@ -55,33 +55,47 @@ const show_result = () => {
 }
 
 const permission_request = () => {
-    if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
-        DeviceMotionEvent.requestPermission().then((result) => {
-            if(result === "granted"){
-                window.addEventListener("devicemotion",gyro,false);
-                document.getElementById("cover").style.display = "none";
-                document.getElementById("point").style.display = "inline";
-                game = true;
-                time = 300;
-                point_c = 0;
-                document.getElementById("showpoint_se").innerHTML = String(point_c)
-                timer = setInterval(countdown,100);
-            }
-        });
-    }
+    const ua = navigator.userAgent;
 
-    if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
-        DeviceOrientationEvent.requestPermission().then((result) => {
-            if(result === "granted"){
-                window.addEventListener("deviceorientation",move,false);
-                document.getElementById("cover").style.display = "none";
-                document.getElementById("point").style.display = "inline";
-                game = true;
-                time = 300;
-                point_c = 0;
-                document.getElementById("showpoint_se").innerHTML = String(point_c)
-            }
-        })
+    if(/iPad|iPhone|iPod/.test(ua)){
+        if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
+            DeviceMotionEvent.requestPermission().then((result) => {
+                if(result === "granted"){
+                    window.addEventListener("devicemotion",gyro,false);
+                    document.getElementById("cover").style.display = "none";
+                    document.getElementById("point").style.display = "inline";
+                    game = true;
+                    time = 300;
+                    point_c = 0;
+                    document.getElementById("showpoint_se").innerHTML = String(point_c)
+                    timer = setInterval(countdown,100);
+                }
+            });
+        }
+
+        if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
+            DeviceOrientationEvent.requestPermission().then((result) => {
+                if(result === "granted"){
+                    window.addEventListener("deviceorientation",move,false);
+                    document.getElementById("cover").style.display = "none";
+                    document.getElementById("point").style.display = "inline";
+                    game = true;
+                    time = 300;
+                    point_c = 0;
+                    document.getElementById("showpoint_se").innerHTML = String(point_c)
+                }
+            })
+        }
+    }else{
+        window.addEventListener("deviceorientationabsolute",move,false);
+        window.addEventListener("devicemotion",gyro,false);
+        
+        document.getElementById("cover").style.display = "none";
+        document.getElementById("point").style.display = "inline";
+        game = true;
+        time = 300;
+        point_c = 0;
+        document.getElementById("showpoint_se").innerHTML = String(point_c)
     }
 }
 

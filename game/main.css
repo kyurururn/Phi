@@ -79,6 +79,18 @@
     flex-direction:column;
 }
 
+.cover_link{
+    height:20dvh;
+    width:100vw;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-top:20px dashed;
+    background-color:rgba(20,20,20,0.3);
+}
+
 .result{
     background-color:rgba(20,20,20,0.3);
     height:100dvh;
