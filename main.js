@@ -48,6 +48,7 @@ const permission_request = () => {
     }else{
         window.addEventListener("deviceorientationabsolute",move,false);
         window.addEventListener("devicemotion",gyro,false);
+        document.getElementById("cover").style.display = "none";
     }
 }
 
