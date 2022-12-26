@@ -17,9 +17,11 @@ let link = document.createElement("link");
 link.setAttribute("rel","stylesheet");
 link.setAttribute("type","text/css");
 if(/iPad|iPhone|iPod/.test(ua)){
-    link.setAttribute("href","main.css")
+    link.setAttribute("href","main.css");
 }else{
-    link.setAttribute("href","main_android.css")
+    link.setAttribute("href","main_android.css");
+    let vh = window.innerHeight / 100
+    document.documentElement.style.setProperty("--vh", vh + "px");
 }
 head.appendChild(link);
 
