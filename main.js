@@ -26,6 +26,7 @@ head.appendChild(link);
 
 
 const permission_request = () => {
+    const ua = navigator.userAgent;
     if(/iPad|iPhone|iPod/.test(ua)){
         if(DeviceOrientationEvent && DeviceOrientationEvent.requestPermission && typeof DeviceOrientationEvent.requestPermission === "function"){
             DeviceMotionEvent.requestPermission().then((result) => {
